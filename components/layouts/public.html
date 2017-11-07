@@ -1,0 +1,10 @@
+<div ng-include="'components/layouts/header.html'"></div>
+<section class="main">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 left-bar" ng-include="'components/layouts/leftsidebar.html'"></div>
+			<div ui-view="container" class="col-md-9"></div>
+		</div>
+	</div>
+</section>
+<div ng-include="'components/layouts/footer.html'"></div>

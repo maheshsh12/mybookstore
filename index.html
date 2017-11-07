@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="myBookApp">
+  <head>
+    <meta charset="utf-8">
+    <base href="http://localhost/mybookstore/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <title ng-bind="siteTitle +(siteTitle?' - ':'')+'My Book Store'"></title>
+
+    <!-- App css -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body id="page-top">
+    <!-- Begin page -->
+    <div id="wrapper" ui-view="app"></div>
+    <!-- END wrapper -->
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- AngularJS Components-->
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.min.js"></script>
+    
+	<!-- Angular App   -->
+    <script src="components/app.js"></script>
+
+    <!-- Controllers  -->
+    <script src="components/controllers/CommonController.js"></script>
+    <script src="components/controllers/WishlistController.js"></script>
+    
+    <!-- Services  -->
+    <script src="components/services/BookService.js"></script>
+
+    <!-- Directives -->
+    <script src="components/directives/bookListDirective.js"></script>
+  </body>
+</html>
