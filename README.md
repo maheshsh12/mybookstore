@@ -6,6 +6,6 @@ Install
 ### Bower
 
 ```bash
-bower install ngstorage
+bower install
 ```
-*NOTE:* This is to install bower components
+*NOTE:* This is to install bower components added bower.json
