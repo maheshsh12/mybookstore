@@ -1,14 +1,19 @@
 <div class="wishlist-itms">
 	<h1>My Books</h1>
-	<div class="row wishlist-item" ng-repeat="mybook in mybooks">
-		<div class="col-md-3">
-			<img src="{{mybook.volumeInfo.imageLinks.thumbnail}}" alt="{{mybook.volumeInfo.title}}"/>
+	<div ng-if="mybooks.length">
+		<div class="row wishlist-item" ng-repeat="mybook in mybooks">
+			<div class="col-md-3">
+				<img src="{{mybook.volumeInfo.imageLinks.thumbnail}}" alt="{{mybook.volumeInfo.title}}"/>
+			</div>
+			<div class="col-md-9">
+				<h2>{{mybook.volumeInfo.title}}</h2>
+				<h3>By {{mybook.volumeInfo.publisher}}</h3>
+				<p>{{mybook.volumeInfo.description}}</p>
+				<i>{{mybook.volumeInfo.pageCount}} Pages</i>
+			</div>
 		</div>
-		<div class="col-md-9">
-			<h2>{{mybook.volumeInfo.title}}</h2>
-			<h3>By {{mybook.volumeInfo.publisher}}</h3>
-			<p>{{mybook.volumeInfo.description}}</p>
-			<i>{{mybook.volumeInfo.pageCount}} Pages</i>
-		</div>
+	</div>
+	<div ng-if="!mybooks.length">
+		<h4>Wishlist is empty</h4>
 	</div>
 </div>
