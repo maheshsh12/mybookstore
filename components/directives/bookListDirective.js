@@ -24,17 +24,25 @@ app.controller('BookListController', function ($rootScope,$scope,$state,$locatio
     $sessionStorage.mybooks = wishlistItems;
     $rootScope.$broadcast('added-to-wishlist');
     console.log( $sessionStorage);
-  }
+  };
   $scope.filterBookList = function(query){
     if(query.length >=3){
       BookService.getBooks(query).then(function(response){
         $scope.books = response.data.items;
       });
     }
-  }
+  };
   $scope.isAdded = function(book){
-    var wishlistItems = $sessionStorage.mybooks;
-    var item = $filter('filter')(wishlistItems, {id: book.id})[0];
-    return item;
-  }
+    var wishlistItems = $sessionStorage.mybooks || [];
+    if(wishlistItems.length){
+      var item = $filter('filter')(wishlistItems, {id: book.id})[0];
+      if(item)
+        return true;
+      else
+        return false;
+    }
+    else{
+      return false;
+    }
+  };
 });
